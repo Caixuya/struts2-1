@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!--设置 struts2标签 的主题为 simple-->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	
+	<!--设置 post方法接收的数据 编码格式为 utf-8-->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	
+	<!-- package的namespace: 通常写功能模块名; -->
+	<!-- package的子元素action：写具体的操作  由哪个Action类、 哪个方法处理 -->
+	<!--action的子元素result：写处理结果、跳转到哪个页面 -->
+	   <package name="default" namespace="/" extends="struts-default">
+	     	<action name="login" class="action.Login" method="check">
+	     		<result name="ok">welcome.jsp</result>
+	     		<result name="error">login.jsp</result>
+	     	</action>
+	    </package>
+	    
+</struts>
